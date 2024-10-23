@@ -1,0 +1,17 @@
+var texto = document.getElementById("paragrafo");
+
+function contagemRegressiva() {
+    let numero = parseInt(prompt("Insira um número para a contagem regressiva:"));
+    
+    let intervalo = setInterval(() => {
+        if (numero >= 0) {
+            texto.innerText = numero;
+            numero--;
+        } else {
+            clearInterval(intervalo);
+            console.log("Contagem regressiva finalizada!");
+        }
+    }, 1000);
+}
+
+contagemRegressiva();

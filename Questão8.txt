@@ -1,0 +1,143 @@
+var numero7 = document.getElementById("numero7");
+var numero2 = document.getElementById("numero2");
+var numero = 0;
+var outroNumero = 0;
+
+const adicao = document.getElementById("adicao");
+  const subtracao = document.getElementById("subtracao");
+  const multiplicacao = document.getElementById("multiplicacao");
+  const divisao = document.getElementById("divisao");
+  const calcular = document.getElementById("resultado");
+  const limpar = document.getElementById("limpar");
+
+numero7.innerText = "7";
+numero2.innerText = "2";
+var adicaoB = false;
+var subtracaoB = false;
+var multiplicacaoB = false;
+var divisaoB = false;
+numero7.style.height = "50px";
+numero2.style.height = "50px";
+numero7.style.width = "40px";
+numero2.style.width = "40px";
+
+document.body.onload = addElement;
+
+function addElement() {
+  const paragrafo = document.createElement("p");
+  paragrafo.style.innerText = "e";
+  adicao.innerText = "+";
+  subtracao.innerText = "-";
+  multiplicacao.innerText = "*";
+  divisao.innerText = "÷";
+  calcular.innerText = "=";
+  limpar.innerText = "C";
+
+  const resultado = document.getElementById("div");
+  const adicaoDiv = document.getElementById("div2");
+  const subtracaoDiv = document.getElementById("div3");
+  const multiplicacaoDiv = document.getElementById("div4");
+  const divisaoDiv = document.getElementById("div4");
+  const calcularDiv = document.getElementById("div5");
+  const limparDiv = document.getElementById("div6");
+
+  adicao.style.height = "40px";
+  subtracao.style.height = "40px";
+  multiplicacao.style.height = "40px";
+  divisao.style.height = "40px";
+  calcular.style.height = "40px";
+  limpar.style.height = "40px";
+  
+  adicao.style.width = "40px";
+  subtracao.style.width = "40px";
+  multiplicacao.style.width = "40px";
+  divisao.style.width = "40px";
+  calcular.style.width = "40px";
+  limpar.style.width = "40px";
+
+  adicao.style.marginRight = "10px";
+  subtracao.style.marginRight = "10px";
+  multiplicacao.style.marginRight = "10px";
+  divisao.style.marginRight = "10px";
+  limpar.style.marginRight = "10px";
+
+  document.body.insertBefore(paragrafo, resultado);
+  document.body.insertBefore(adicao, adicaoDiv);
+  document.body.insertBefore(subtracao, subtracaoDiv);
+  document.body.insertBefore(multiplicacao, multiplicacaoDiv);
+  document.body.insertBefore(divisao, divisaoDiv);
+  document.body.insertBefore(calcular, calcularDiv);
+  document.body.insertBefore(limpar, limparDiv);
+}
+
+
+numero7.addEventListener("click", (event) => {
+    numero = Number(numero7.innerText);
+    limparTexto();
+    paragrafo.innerText = paragrafo.innerText+""+numero;
+    verificar();
+});
+
+numero2.addEventListener("click", (event) => {
+    numero = Number(numero2.innerText);
+    limparTexto();
+    paragrafo.innerText = paragrafo.innerText+""+numero;
+    verificar();
+  });
+  
+  adicao.addEventListener("click", (event) => {
+    adicaoB = true;
+    paragrafo.innerText = "+";
+  });
+
+  subtracao.addEventListener("click", (event) => {
+    subtracaoB = true;
+    paragrafo.innerText = "-";
+  });
+
+  multiplicacao.addEventListener("click", (event) => {
+    multiplicacaoB = true;
+    paragrafo.innerText = "*";
+  });
+
+  divisao.addEventListener("click", (event) => {
+    divisaoB = true;
+    paragrafo.innerText = "÷";
+  });
+
+  resultado.addEventListener("click", (event) => {
+    console.log(outroNumero);
+  });
+
+  limpar.addEventListener("click", (event) => {
+    adicaoB = false;
+    subtracaoB = false;
+    multiplicacaoB = false;
+    divisaoB = false;
+    paragrafo.innerText = "";
+    outroNumero = 0;
+  });
+
+  function verificar(){
+      if(outroNumero === 0){
+          outroNumero = numero;
+        }
+        if(adicaoB){
+            outroNumero += Number(paragrafo.innerText);
+        }
+        if(subtracaoB){
+            outroNumero -= Number(paragrafo.innerText);
+        }
+        if(multiplicacaoB){
+            outroNumero *= Number(paragrafo.innerText);
+        }
+        if(divisaoB){
+            outroNumero /= Number(paragrafo.innerText);
+        }
+    }
+
+  function limparTexto(){
+    if(paragrafo.innerText == "+" || paragrafo.innerText == "-" || paragrafo.innerText == "*" || paragrafo.innerText == "÷"){
+        paragrafo.innerText = "";
+    }
+  }

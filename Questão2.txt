@@ -1,0 +1,4 @@
+var texto = document.getElementById("paragrafo");
+
+texto.innerText = "Novo Texto";
+texto.style.backgroundColor = "blue";

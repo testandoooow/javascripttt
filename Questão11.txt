@@ -1,0 +1,12 @@
+var texto = document.getElementById("paragrafo");
+var botao = document.getElementById("botao");
+
+botao.style.backgroundColor = "red";
+botao.innerText = "Aumentar texto";
+
+texto.innerText = "Novo Texto";
+botao.style.height = "30px";
+
+botao.onclick = function(){
+    texto.style.visibility = "hidden";
+}

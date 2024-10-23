@@ -1,0 +1,9 @@
+var texto = document.getElementById("paragrafo");
+var botao = document.getElementById("botao");
+
+botao.style.backgroundColor = "red";
+botao.innerText = "Clique aqui";
+
+texto.innerText = "Novo Texto";
+texto.style.backgroundColor = "blue";
+botao.style.height = "30px";

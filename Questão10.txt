@@ -1,0 +1,22 @@
+var texto = document.getElementById("paragrafo");
+var botao = document.getElementById("botao");
+var botao2 = document.getElementById("botao2");
+
+botao.style.backgroundColor = "red";
+botao2.style.backgroundColor = "blue";
+botao.innerText = "Aumentar texto";
+botao2.innerText = "Diminuir texto";
+
+texto.innerText = "Novo Texto";
+botao.style.height = "30px";
+botao2.style.height = "30px";
+
+var i = 15;
+botao.onclick = function(){
+    i += 5;
+    texto.style.fontSize = i + "px";
+}
+botao2.onclick = function(){
+    i -= 5;
+    texto.style.fontSize = i + "px";
+}

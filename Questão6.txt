@@ -1,0 +1,23 @@
+var texto = document.getElementById("paragrafo");
+var botao = document.getElementById("botao");
+
+botao.style.backgroundColor = "red";
+botao.innerText = "Clique aqui";
+
+texto.innerText = "Novo Texto";
+botao.style.height = "30px";
+
+botao.addEventListener("click", (event) => {
+    botao.style.visibility = "hidden";
+  });
+
+texto.style.fontStyle = "italic";
+texto.style.color = "blue";
+texto.style.border = "10px double green";
+texto.style.borderRadius = "1000px"; 
+botao.style.border = "5px inset blue";
+botao.style.borderRadius = "1000px";
+
+texto.addEventListener("click", (event) => {
+    botao.style.visibility = "visible";
+});
